@@ -1,0 +1,29 @@
+{
+  "name": "quansitech/qscmf-wsig",
+  "description": "qscmf's WYSIWYG component",
+  "type": "library",
+  "keywords": ["cms", "qscmf", "WYSIWYG"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "tiderjian",
+      "email": "tider_yatsen@hotmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2.0",
+    "tiderjian/think-core": "^11.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "Wsig\\": "src/"
+    }
+  },
+  "extra": {
+    "qscmf": {
+      "providers": [
+        "Wsig\\WsigProvider"
+      ]
+    }
+  }
+}
