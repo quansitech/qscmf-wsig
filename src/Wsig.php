@@ -18,7 +18,6 @@ class Wsig{
     }
 
 
-
     protected function getWidthCss(){
         if($this->width){
             return $this->width . 'px';
@@ -83,11 +82,11 @@ class Wsig{
                         
                         setTimeout(function(){
                             toastr.remove();
+                            location.reload();
                         }, 2000);
                     });
                 }
             });
-            
             
             var wg_{$uuid} = null;
             p_{$uuid}.onload = function(){
