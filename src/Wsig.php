@@ -107,8 +107,24 @@ class Wsig{
                     heads[0].appendChild(script);
                 }
                 else{
-                    wg_{$uuid} = new win.QscmfWYSIWYG({$options}); 
+                    wg_{$uuid} = new win.QscmfWYSIWYG({$options});
                 }
+                
+                var config = { childList: true };
+                    
+                //监控子元素变化
+                const callback = function(mutationsList, observer) {
+                    for(let mutation of mutationsList) {
+                         if (mutation.type === 'childList') {
+                            var myEvent = new Event('resize');
+                            win.dispatchEvent(myEvent);
+                         }
+                         
+                    }
+                };
+
+                const observer = new MutationObserver(callback);
+                observer.observe(doc.body, config);
             }
         </script>
     </div>
