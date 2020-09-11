@@ -110,16 +110,13 @@ class Wsig{
                     wg_{$uuid} = new win.QscmfWYSIWYG({$options});
                 }
                 
-                var config = { childList: true };
+                var config = { attributes: true, childList: true, subtree: true }
                     
                 //监控子元素变化
                 const callback = function(mutationsList, observer) {
                     for(let mutation of mutationsList) {
-                         if (mutation.type === 'childList') {
-                            var myEvent = new Event('resize');
-                            win.dispatchEvent(myEvent);
-                         }
-                         
+                        var myEvent = new Event('resize');
+                        win.dispatchEvent(myEvent);
                     }
                 };
 
