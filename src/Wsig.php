@@ -119,9 +119,11 @@ class Wsig{
                         win.dispatchEvent(myEvent);
                     }
                 };
-
                 const observer = new MutationObserver(callback);
-                observer.observe(doc.body, config);
+                for(var i = 0; i < doc.getElementsByClassName('render-mg').length; i++){
+                    observer.observe(doc.getElementsByClassName('render-mg')[i], config);
+                }
+                
             }
         </script>
     </div>
